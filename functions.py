@@ -21,7 +21,11 @@ from server import app
 
 
 def write_to_txt(data):
-    with open("database/database.txt", mode="a") as database:
+    database_file = "database/database.txt"
+    mode = "a"
+    if not path.exists(database_file):
+        mode = "w"
+    with open(database_file, mode=mode) as database:
         data["date"] = (
             date.today().strftime("%d/%m/%y")
             + "_"
@@ -32,7 +36,11 @@ def write_to_txt(data):
 
 
 def write_to_csv(data):
-    with open("database/database.csv", mode="a", newline="") as database:
+    database_file = "database/database.csv"
+    mode = "a"
+    if not path.exists(database_file):
+        mode = "w"
+    with open(database_file, mode=mode, newline="") as database:
         date_time = (
             date.today().strftime("%d/%m/%y")
             + "_"
