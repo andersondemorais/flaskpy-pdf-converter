@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Merger</title>
+{% endblock %}
+
+{% block body %}
+<div class="section-container">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="section-container-spacer text-center">
+            <h1 class="h2">&clubs; Merger</h1>
+          </div>
+          
+          <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+               <form action="upload_many/many" method="POST" class="reveal-content" enctype="multipart/form-data" autocomplete="off">
+                  <div class="row">
+                    <div class="col-md-7">
+                      <div class="form-group">
+                      	<label for="filesUpload">Load files/Carregar arquivos</label>
+                        <input type="file" class="btn btn-danger btn-lg" id="filesUpload" name="files" accept=".PDF,.pdf" multiple="multiple" onchange="loadName()">
+                        <div id="output"></div>
+                        <br>
+                        <button type="submit" class="btn btn-default btn-lg">Send</button>                        
+                        <button type="reset" class="btn btn-basic btn-lg" onclick="clearNames()">Reset</button>
+                      </div>     
+                    </div>
+                    <div class="col-md-5">
+                      <img src="{{url_for('static', filename='assets/images/profil1.png')}}" class="img-responsive">
+                    </div>           
+                  </div>
+                </form>
+            </div>
+
+          </div>
+         
+       </div>
+      </div>
+    </div>
+</div>
+
+<!-- MY SCRIPTS -->
+<!-- script to display the file names -->
+<script type="text/javascript">
+  function loadName() {
+    var input = document.getElementById('filesUpload');
+    var output = document.getElementById("output");
+    var children = "";
+    for(var i=0; i<input.files.length; i++) {
+      children += '<li>' + input.files.item(i).name + '</li>';
+    }
+    output.innerHTML = '<ul id="fileNames">' + children + '</ul>';
+  }
+  function clearNames() {
+    var output = document.getElementById('output');
+    while (output.hasChildNodes()) {
+      output.removeChild(output.firstChild);
+    }
+  }
+  function refreshPage() {
+    var t = setTimeout(function () {
+      window.location.reload();
+      window.clearTimeout(t);
+    }, 6000);
+  }
+</script>
+{% endblock %}

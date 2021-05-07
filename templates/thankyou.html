@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Thanks</title>
+{% endblock %}
+
+{% block body %}
+<div class="section-container">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="section-container-spacer text-center">
+            <h1 class="h2">&hearts; Thanks</h1>
+          </div>
+          
+          <div class="section-container-spacer">
+            <div class="col-md-10 col-md-offset-1">
+               <p>Thank you! I will get in touch with you, shortly!<br>
+               Obrigado! Entrarei em contato com voc&ecirc; em breve!</p>
+              <img src="{{url_for('static', filename='assets/images/happy_face.png')}}" class="img-responsive" alt="">
+            </div>
+          </div>
+          </div>
+       </div>
+      </div>
+    </div>
+</div>
+{% endblock %}

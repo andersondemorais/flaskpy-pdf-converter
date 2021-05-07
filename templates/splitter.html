@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Splitter</title>
+{% endblock %}
+
+{% block body %}
+<div class="section-container">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="section-container-spacer text-center">
+            <h1 class="h2">&clubs; Splitter</h1>
+          </div>
+          
+          <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+               <form action="upload_one" method="POST" class="reveal-content" enctype="multipart/form-data" autocomplete="off">
+                  <div class="row">
+                    <div class="col-md-7">
+                      <div class="form-group">
+                      	<label for="fileUpload">Load file/Carregar arquivo</label>
+                        <input type="file" class="btn btn-danger btn-lg" id="fileUpload" name="file" accept=".PDF,.pdf">
+                        <br>
+                        <button type="submit" class="btn btn-default btn-lg">Send</button>                        
+                        <button type="reset" class="btn btn-basic btn-lg">Reset</button>
+                      </div>     
+                    </div>
+                    <div class="col-md-5">
+                      <img src="{{url_for('static', filename='assets/images/profil1.png')}}" class="img-responsive">
+                    </div>           
+                  </div>
+                </form>
+            </div>
+
+          </div>
+         
+       </div>
+      </div>
+    </div>
+</div>
+
+<!-- MY SCRIPTS -->
+<!-- script to display the file names -->
+<script type="text/javascript">
+  function refreshPage() {
+    var t = setTimeout(function () {
+      window.location.reload();
+      window.clearTimeout(t);
+    }, 6000);
+  }
+</script>
+{% endblock %}
