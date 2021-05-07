@@ -13,3 +13,9 @@ from flask import Flask
 app = Flask(__name__)
 
 import routes
+
+""" UPLOAD FILE CONFG """
+app.config["MAX_CONTENT_LENGTH"] = 10 * 1024 * 1024
+app.config["UPLOAD_EXTENSIONS"] = [".pdf", ".PDF", ".txt"]
+app.config["UPLOAD_PATH"] = "uploads"
+app.config["PDF_MERGED"] = "uploads/PDF_MERGED.pdf"
