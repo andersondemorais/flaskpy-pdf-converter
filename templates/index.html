@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width,initial-scale=1" name="viewport">
+  <meta content="description" name="description">
+  <meta name="google" content="notranslate" />
+  <meta content="Mashup templates have been developped by Orson.io team" name="author">
+
+  <title>Index</title>
+  <!-- Disable tap highlight on IE -->
+  <meta name="msapplication-tap-highlight" content="no">
+  
+  <link rel="apple-touch-icon" sizes="180x180" href="{{url_for('static', filename='assets/apple-icon-180x180.png')}}">
+  <link href="{{url_for('static', filename='favicon.png')}}" rel="icon"> 
+
+  <link href="{{url_for('static', filename='style.css')}}" rel="stylesheet">
+</head>
+<body class="minimal">
+  <div id="site-border-left"></div>
+  <div id="site-border-right"></div>
+  <div id="site-border-top"></div>
+  <div id="site-border-bottom"></div>
+  <!-- Add your content of header -->
+  <header>
+    <nav class="navbar  navbar-fixed-top navbar-inverse">
+      <div class="container">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+
+        <div class="collapse navbar-collapse" id="navbar-collapse">
+          <ul class="nav navbar-nav ">
+            <li><a href="{{url_for('index')}}" title="">&spades; Home</a></li>
+            <li><a href="{{url_for('works')}}" title="">&clubs; Works</a></li>
+            <li><a href="{{url_for('about')}}" title="">&diams; About</a></li>
+            <li><a href="{{url_for('contact')}}" title="">&hearts; Contact</a></li>
+            <li><a href="{{url_for('components')}}" title="">&clubs; Components</a></li>
+          </ul>
+
+
+        </div> 
+      </div>
+    </nav>
+  </header>
+  <!-- Add your site or app content here -->
+  <div class="hero-full-container background-image-container white-text-container" style="background-image: url({{url_for('static', filename='/assets/images/cyber.jpg')}})">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="hero-full-wrapper">
+            <div class="text-content">
+              <h1><span id="dateToday"></span><br>
+                <span id="typed-strings">
+                  <span>Steak knife..</span>
+                  <span>Card shark...</span>
+                  <span>Con job....</span>
+                  <span>Boot cut.....</span>
+                  <span>... ... ...</span>
+                </span>
+                <span id="typed"></span>
+              </h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function (event) {
+       type();
+       movingBackgroundImage();
+    });
+  </script>
+  <script type="text/javascript" src="{{url_for('static', filename='behavior.js')}}"></script>
+
+  <!-- MY SCRIPTS -->
+  <!-- script to not return page with button from browser -->
+  <script type="text/javascript">
+    (function (global) {
+      if(typeof (global) === "undefined") {
+        throw new Error("window is undefined");
+      }
+      var _hash = "!";
+      var noBackPlease = function () {
+        global.location.href += "#";
+        // Making sure we have the fruit available for juice (^__^)        
+        global.setTimeout(function () {
+          global.location.href += "!";
+        }, 50);
+      };
+      global.onhashchange = function () {
+        if (global.location.hash !== _hash) {
+          global.location.hash = _hash;
+        }
+      };
+      global.onload = function () {
+        noBackPlease();
+        //Disables backspace on page except on input fields and textarea..
+        document.body.onkeydown = function (e) {
+          var elm = e.target.nodeName.toLowerCase();
+          if (e.which === 8 && (elm !== 'input' && elm  !== 'textarea')) {
+            e.preventDefault();
+          }
+          //Stopping the event bubbling up the DOM tree...
+          e.stopPropagation();
+        };
+      }
+    })(window);
+  </script>
+  
+  <!-- script to get current date -->
+  <script type="text/javascript">
+    var dt = new Date();
+    document.getElementById('dateToday').innerHTML = dt.toDateString();
+  </script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>About</title>
+{% endblock %}
+
+{% block body %}
+<div class="section-container">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="section-container-spacer text-center">
+            <h1 class="h2">&diams; About</h1>
+          </div>
+          
+          <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+              <div class="row">
+                <div class="col-xs-12 col-md-6">
+                  <h3>PDF</h3>
+                  <h6>From Wikipedia, the free encyclopedia</h6>
+                  <p>The Portable Document Format (PDF) is a file format developed by Adobe in 1993 to present documents, including text formatting and images, in a manner independent of application software, hardware, and operating systems. Based on the PostScript language, each PDF file encapsulates a complete description of a fixed-layout flat document, including the text, fonts, vector graphics, raster images and other information needed to display it. PDF was standardized as ISO 32000 in 2008, and no longer requires any royalties for its implementation.</p>
+                  <h6>Origem: Wikipédia, a enciclopédia livre</h6>
+                  <p>O Portable Document Format (PDF) é um formato de arquivo desenvolvido pela Adobe em 1993 para apresentar documentos, incluindo formatação de texto e imagens, de uma maneira independente de software, hardware e sistemas operacionais. Com base na linguagem PostScript, cada arquivo PDF encapsula uma descrição completa de um documento plano de layout fixo, incluindo texto, fontes, gráficos vetoriais, imagens raster e outras informações necessárias para exibi-lo. PDF foi padronizado como ISO 32000 em 2008, e não requer mais royalties para sua implementação. 
+                  <h3>Portable Document Format</h3>
+                  <p>
+                  Developed by Adobe Inc.(1993 - 2008)<br>
+                  ISO(2008 - )<br>
+                  Initial release 15 June 1993<br>
+                  Latest release 2.0<br>
+                  Extended to PDF/A, PDF/E, PDF/UA, PDF/VT, PDF/X<br>
+                  Standard ISO 32000-2<br>
+                  Website www.iso.org/standard/63534.html
+                  </p>
+                </div>
+                <div class="col-xs-12 col-md-6">
+                  <img src="{{url_for('static', filename='assets/images/profil.png')}}" class="img-responsive" alt="">
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          
+       </div>
+      </div>
+    </div>
+</div>
+{% endblock %}
